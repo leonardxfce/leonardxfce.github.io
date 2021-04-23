@@ -3,19 +3,19 @@
   <head>
     <title>Leonardo Araoz - Software Developer</title>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <meta content="ie=edge" http-equiv="X-UA-Compatible" />
     <link
-      href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
-      rel="stylesheet"
-      integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
       crossorigin="anonymous"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+      integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+      rel="stylesheet"
     />
     <link
-      rel="stylesheet"
+      crossorigin="anonymous"
       href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.2/animate.min.css"
       integrity="sha256-PHcOkPmOshsMBC+vtJdVr5Mwb7r0LkSVJPlPrp/IMpU="
-      crossorigin="anonymous"
+      rel="stylesheet"
     />
     <link
       href="https://fonts.googleapis.com/css?family=Alata&display=swap"
@@ -27,43 +27,48 @@
     <div class="container-fluid">
       <div class="row main-div">
         <div class="col d-flex align-items-end justify-content-center">
-          <img src="/img/me.png" alt="me" class="main-img animated slideInUp" />
+          <img
+            alt="Leonardo Araoz photo"
+            class="main-img slideInUp"
+            src="img/me.png"
+          />
         </div>
-        <div
-          class="col d-flex align-items-center justify-content-center flex-column rigth-side"
-        >
-          <span class="display-1 font-weight-bold animated tada"
-            >Leonardo Araoz</span
-          >
-          <span class="lead font-italic animated fadeIn"
-            >Software Developer</span
-          >
-          <div class="row">
-            <div class="col">React</div>
-            <div class="col">WordPress</div>
-            <div class="col">Django</div>
-          </div>
+        <div class="left-side">
+          <p class="display-1 font-weight-bold tada">Leonardo Araoz</p>
+          <p class="h1 font-italic fadeIn">Full-Stack Software Developer</p>
+          <p>Javascript</p>
+          <p>Python</p>
+          <p>PHP</p>
+          <p>React</p>
+          <p>Vue.js</p>
+          <p>Django</p>
+          <p>Wordpress</p>
         </div>
       </div>
-
-      <style>
-        * {
-          font-family: "Alata", sans-serif;
-        }
-
-        .main-img {
-          height: 60vh;
-        }
-
-        .main-div {
-          height: 100vh;
-        }
-
-        .rigth-side {
-          background-color: lightblue;
-          box-shadow: 0 0 28px rgba(0, 0, 0, 0.25), 0 0 10px rgba(0, 0, 0, 0.22);
-        }
-      </style>
     </div>
   </body>
+  <style>
+    * {
+      font-family: "Alata", sans-serif;
+    }
+
+    .main-img {
+      height: 90vh;
+    }
+
+    .main-div {
+      height: 100vh;
+      text-align: right;
+    }
+    .left-side {
+      display: flex;
+      height: 100vh;
+      flex-flow: column;
+      padding-right: 3em;
+      justify-content: center;
+    }
+    p {
+      margin-bottom: 0;
+    }
+  </style>
 </html>
