@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
   <head>
     <title>Leonardo Araoz - Software Developer</title>
@@ -6,43 +6,26 @@
     <meta content="width=device-width, initial-scale=1.0" name="viewport" />
     <meta content="ie=edge" http-equiv="X-UA-Compatible" />
     <link
-      crossorigin="anonymous"
-      href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
-      integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
-      rel="stylesheet"
-    />
-    <link
-      crossorigin="anonymous"
-      href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.2/animate.min.css"
-      integrity="sha256-PHcOkPmOshsMBC+vtJdVr5Mwb7r0LkSVJPlPrp/IMpU="
-      rel="stylesheet"
-    />
-    <link
       href="https://fonts.googleapis.com/css?family=Alata&display=swap"
       rel="stylesheet"
     />
   </head>
 
   <body>
-    <div class="container-fluid">
-      <div class="row main-div">
-        <div class="col d-flex align-items-end justify-content-center">
-          <img
-            alt="Leonardo Araoz photo"
-            class="main-img slideInUp"
-            src="img/me.png"
-          />
-        </div>
-        <div class="left-side">
-          <p class="display-1 font-weight-bold tada">Leonardo Araoz</p>
-          <p class="h1 font-italic fadeIn">Full-Stack Software Developer</p>
-          <p>Javascript</p>
-          <p>Python</p>
-          <p>PHP</p>
-          <p>React</p>
-          <p>Vue.js</p>
-          <p>Django</p>
-          <p>Wordpress</p>
+    <div>
+      <div class="main-div">
+        <div class="">
+          <div class="left-side">
+            <h1>Leonardo Araoz</h1>
+            <h2>Full-Stack Software Developer</h2>
+            <p>Javascript</p>
+            <p>Python</p>
+            <p>PHP</p>
+            <p>React</p>
+            <p>Vue.js</p>
+            <p>Django</p>
+            <p>Wordpress</p>
+          </div>
         </div>
       </div>
     </div>
@@ -52,23 +35,40 @@
       font-family: "Alata", sans-serif;
     }
 
-    .main-img {
-      height: 90vh;
+    .main-div {
+      position: relative; /* Necesario para posicionar el texto sobre él */
+      width: 100%;
+      height: 100vh; /* Ocupa el 100% del alto del viewport (ventana) */
+      background-image: url("img/me.png"); /* Tu imagen grande */
+      background-size: cover; /* Asegura que la imagen siempre cubra el área, recortando lo necesario */
+      background-position: left bottom;
+      background-repeat: no-repeat; /* Evita que la imagen se repita */
+      overflow: hidden; /* Oculta partes de la imagen si se desbordan */
     }
 
-    .main-div {
-      height: 100vh;
-      text-align: right;
-    }
     .left-side {
-      display: flex;
-      height: 100vh;
-      flex-flow: column;
-      padding-right: 3em;
-      justify-content: center;
+      position: absolute;
+      top: 20%;
+      right: 10%;
+      color: white; /* O el color que mejor contraste */
+      text-align: right;
+      z-index: 2; /* Asegura que el texto esté encima */
+      text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8); /* La sombra para legibilidad */
+      width: 80%; /* Limita el ancho del texto para que no se desborde */
+      max-width: 600px; /* O un ancho máximo razonable */
     }
+
     p {
-      margin-bottom: 0;
+      line-height: 0;
+    }
+    /* Opcional: Ajustar la posición del texto para móviles si es necesario */
+    @media (max-width: 768px) {
+      .main-div{
+        background-position: calc(0% - 100px) bottom;
+      }
+      .left-side {
+        top: 0%; /* Mover el texto un poco más arriba en móviles */
+      }
     }
   </style>
 </html>
