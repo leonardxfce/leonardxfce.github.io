@@ -1,0 +1,37 @@
+name: Build resume PDF
+
+on:
+  push:
+    branches: [master]
+    paths:
+      - "resume/**"
+      - ".github/workflows/resume.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: browser-actions/setup-chrome@latest
+
+      - name: Print resume HTML to PDF
+        run: |
+          chrome --headless --no-sandbox --disable-gpu \
+            --print-to-pdf="$GITHUB_WORKSPACE/resume/Leonardo_Araoz_Resume_2026.pdf" \
+            --print-to-pdf-no-header \
+            "file://$GITHUB_WORKSPACE/resume/Leonardo_Araoz_Resume_2026.html"
+          cp resume/Leonardo_Araoz_Resume_2026.pdf resume.pdf
+          ls -la resume/ resume.pdf
+
+      - name: Commit PDF if changed
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add resume/Leonardo_Araoz_Resume_2026.pdf resume.pdf
+          git diff --cached --quiet || git commit -m "Rebuild resume PDF from HTML [skip ci]"
+          git push
